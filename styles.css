@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
+
+:root {
+  --brand-teal: #568e86;
+  --brand-teal-dark: #3d6860;
+  --brand-mint: #7db09a;
+  --brand-cool-gray: #77877a;
+  --page-bg: #eef3f2;
+  --card-border: rgba(255, 255, 255, 0.5);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --shadow-card: 0 2px 14px rgba(56, 96, 90, 0.09);
+  --shadow-card-hover: 0 8px 32px rgba(56, 96, 90, 0.16);
+  --focus-ring: rgba(86, 142, 134, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  color: #1f2c27;
+  background: var(--page-bg);
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  padding: 24px;
+}
+
+.panel {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 22px 20px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  box-shadow: var(--shadow-card);
+}
+
+.panel h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: var(--brand-teal-dark);
+  letter-spacing: 0.01em;
+}
+
+.hint {
+  margin: 0 0 6px;
+  color: var(--brand-cool-gray);
+  font-size: 0.88rem;
+}
+
+label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #4f5f57;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #d2dcda;
+  border-radius: 12px;
+  padding: 9px 12px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.7);
+  color: #23322d;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 88px;
+  line-height: 1.45;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--brand-teal);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+  background: #fff;
+}
+
+.font-control {
+  display: grid;
+  grid-template-columns: 36px 1fr 36px auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.font-control input[type="range"] {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  height: 6px;
+  accent-color: var(--brand-teal);
+  background: transparent;
+}
+
+.small-btn {
+  padding: 8px 0;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brand-teal-dark);
+  border: 1px solid #d2dcda;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.small-btn:hover {
+  transform: none;
+  box-shadow: none;
+  filter: none;
+  border-color: var(--brand-teal);
+  background: #fff;
+}
+
+.font-size-value {
+  min-width: 52px;
+  text-align: right;
+  font-weight: 700;
+  color: #4f5f57;
+  font-size: 0.85rem;
+}
+
+.actions {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.actions button:first-child {
+  grid-column: 1 / -1;
+}
+
+button {
+  border: 0;
+  background: var(--brand-teal);
+  color: #fff;
+  border-radius: 12px;
+  padding: 9px 14px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  box-shadow: 0 2px 8px rgba(56, 96, 90, 0.18);
+}
+
+.button-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.actions button.reset-btn {
+  color: #4f5f57;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #d2dcda;
+  box-shadow: none;
+}
+
+button:hover {
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(56, 96, 90, 0.22);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.preview-wrap {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  padding: 24px;
+  overflow: auto;
+  gap: 20px;
+}
+
+.preview-note {
+  margin: 0;
+  padding: 12px 16px;
+  background: rgba(86, 142, 134, 0.07);
+  border: 1px solid rgba(86, 142, 134, 0.18);
+  border-radius: 10px;
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: #3d5550;
+}
+
+.preview-note strong {
+  color: var(--brand-teal-dark);
+}
+
+.preview {
+  width: min(100%, 1150px);
+}
+
+.preview svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1100px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}

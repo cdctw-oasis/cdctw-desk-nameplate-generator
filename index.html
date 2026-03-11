@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>衛福部疾管署 CDC-辦公室 OA 屏風名牌產生器</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel">
+        <h1>衛福部疾管署 CDC-辦公室 OA 屏風名牌產生器</h1>
+        <p class="hint">本產生器為固定版面模板，僅供編輯姓名與職稱文字。</p>
+
+        <label for="nameZh">姓名</label>
+        <input id="nameZh" type="text" maxlength="8" value="疾管家" />
+
+        <label for="titleZh">中文職稱</label>
+        <input id="titleZh" type="text" maxlength="16" value="疾管署官方帳號" />
+
+        <label for="titleEn">英文職稱</label>
+        <textarea id="titleEn" rows="3" maxlength="240">LINE Official Account of Centers for Disease Control</textarea>
+        <label for="enFontSize">英文職稱字級</label>
+        <div class="font-control">
+          <button id="enFontSizeDownBtn" type="button" class="small-btn" aria-label="縮小字級">
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <input id="enFontSize" type="range" min="26" max="60" step="1" value="44" />
+          <button id="enFontSizeUpBtn" type="button" class="small-btn" aria-label="放大字級">
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <span id="enFontSizeValue" class="font-size-value">44 px</span>
+        </div>
+
+        <div class="actions">
+          <button id="resetBtn" type="button" class="reset-btn">
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 12a9 9 0 1 0 3-6.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M3 4v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>還原預設</span>
+          </button>
+          <button id="downloadPngBtn" type="button">
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="9" cy="10" r="1.5" fill="currentColor"/>
+              <path d="M5.5 17l4.5-4 3.3 3 2.3-2 2.9 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>下載 PNG</span>
+          </button>
+          <button id="downloadSvgBtn" type="button">
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 8 5 12l4 4M15 8l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="m13 6-2 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>下載 SVG</span>
+          </button>
+          <button id="downloadPdfBtn" type="button">
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M14 2v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M8 15h8M8 18h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>下載 PDF</span>
+          </button>
+          <button id="printPdfBtn" type="button" title="開啟 A4 橫式 PDF 並列印">
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 8V3h10v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <rect x="6" y="14" width="12" height="7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <rect x="3" y="8" width="18" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17" cy="12" r="1" fill="currentColor"/>
+            </svg>
+            <span>開啟 PDF 列印</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="preview-wrap">
+        <div id="preview" class="preview"></div>
+        <p class="preview-note">
+          ℹ️ 本產生器適用之 OA 桌牌尺寸為 <strong>20 × 7.5 cm</strong>。<br />
+          下載 PDF / 開啟 PDF 列印後，請選擇 <strong>A4 橫式</strong> 列印，並依<strong>四邊黑色粗線的內緣裁切</strong>，即可取得桌牌。
+        </p>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
